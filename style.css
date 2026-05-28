@@ -1,0 +1,110 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #1a1a2e;
+  border-bottom: 0.5px solid rgba(255,255,255,0.1);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: height 0.3s, background 0.3s;
+}
+
+.navbar.scrolled {
+  height: 54px;
+  background: rgba(26, 26, 46, 0.97);
+}
+
+.navbar-brand {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-brand .brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e8c97a;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  font-size: 14px;
+  color: #9a9aaf;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
+}
+
+.navbar-links a:hover {
+  background: rgba(255,255,255,0.07);
+  color: #ffffff;
+}
+
+.navbar-links a.active {
+  color: #e8c97a;
+  background: rgba(232,201,122,0.1);
+}
+
+.navbar-cta {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a2e;
+  background: #e8c97a;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.18s;
+}
+
+.navbar-cta:hover { opacity: 0.88; }
+
+/* Mobile */
+.navbar-mobile-btn {
+  display: none;
+  background: none;
+  border: 0.5px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color: #ccc;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-links, .navbar-cta { display: none; }
+  .navbar-mobile-btn { display: flex; }
+
+  .navbar-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    padding: 1rem;
+    border-bottom: 0.5px solid rgba(255,255,255,0.1);
+    gap: 4px;
+  }
+}
